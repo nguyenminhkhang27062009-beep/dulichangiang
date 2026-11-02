@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khám Phá An Giang</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f8f5;
+    color: #263238;
+    line-height: 1.7;
+}
+
+header {
+    background: #075b43;
+    color: white;
+    padding: 16px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+.hero {
+    min-height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+    background:
+    linear-gradient(rgba(0,50,35,.55),rgba(0,40,30,.65)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1800") center/cover;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 19px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.button {
+    display: inline-block;
+    background: #ffbd45;
+    color: #173b2d;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+section {
+    padding: 65px 7%;
+}
+
+.section-title {
+    text-align: center;
+    color: #086044;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.section-desc {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 35px;
+    color: #65736d;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.intro img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.intro h3 {
+    color: #086044;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    color: #08704d;
+    margin-bottom: 8px;
+}
+
+.culture, .itinerary {
+    background: #e9f4ed;
+}
+
+.highlight {
+    background: #075b43;
+    color: white;
+    text-align: center;
+}
+
+.highlight h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.highlight p {
+    max-width: 750px;
+    margin: auto;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: auto;
+}
+
+.timeline-item {
+    background: white;
+    margin: 18px 0;
+    padding: 20px;
+    border-left: 5px solid #08704d;
+    border-radius: 8px;
+}
+
+.timeline-item h3 {
+    color: #08704d;
+}
+
+footer {
+    background: #063c2e;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+@media(max-width:850px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:550px) {
+    .hero {
+        min-height: 430px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 45px 5%;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌿 KHÁM PHÁ AN GIANG</div>
+
+    <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#about">Giới thiệu</a>
+        <a href="#places">Du lịch</a>
+        <a href="#culture">Văn hóa</a>
+        <a href="#food">Ẩm thực</a>
+        <a href="#schedule">Lịch trình</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <div>
+        <h1>KHÁM PHÁ AN GIANG</h1>
+        <p>
+            Vùng đất hội tụ vẻ đẹp thiên nhiên,
+            văn hóa đặc sắc và những trải nghiệm
+            du lịch hấp dẫn của miền Tây Nam Bộ.
+        </p>
+        <a href="#places" class="button">KHÁM PHÁ NGAY</a>
+    </div>
+</div>
+
+<section id="about">
+    <h2 class="section-title">GIỚI THIỆU VỀ AN GIANG</h2>
+    <p class="section-desc">
+        An Giang là vùng đất giàu truyền thống lịch sử,
+        văn hóa và sở hữu nhiều cảnh quan thiên nhiên độc đáo.
+    </p>
+
+    <div class="intro">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1000" alt="Phong cảnh thiên nhiên">
+
+        <div>
+            <h3>Vẻ đẹp miền Tây sông nước</h3>
+            <p>
+                An Giang nổi tiếng với những cánh đồng rộng lớn,
+                dòng sông hiền hòa, núi non hùng vĩ và những
+                nét văn hóa đặc trưng của nhiều cộng đồng dân tộc.
+            </p>
+            <br>
+            <p>
+                Đây là vùng đất có nhiều tiềm năng phát triển
+                du lịch sinh thái, du lịch tâm linh,
+                du lịch văn hóa và du lịch cộng đồng.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="places">
+    <h2 class="section-title">NHỮNG ĐIỂM ĐẾN NỔI BẬT</h2>
+    <p class="section-desc">
+        Cùng khám phá những địa danh nổi tiếng
+        mang đậm dấu ấn thiên nhiên và lịch sử An Giang.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800" alt="Núi Cấm">
+            <div class="card-content">
+                <h3>⛰️ Núi Cấm</h3>
+                <p>
+                    Núi Cấm là điểm du lịch nổi bật của vùng
+                    Thất Sơn, thu hút du khách bởi cảnh quan
+                    thiên nhiên và không khí trong lành.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800" alt="Kiến trúc">
+            <div class="card-content">
+                <h3>🛕 Miếu Bà Chúa Xứ Núi Sam</h3>
+                <p>
+                    Địa điểm du lịch tâm linh nổi tiếng,
+                    gắn liền với tín ngưỡng và đời sống
+                    văn hóa của người dân địa phương.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800" alt="Rừng tràm">
+            <div class="card-content">
+                <h3>🌳 Rừng tràm Trà Sư</h3>
+                <p>
+                    Khu du lịch sinh thái nổi bật với
+                    hệ sinh thái rừng tràm, thảm bèo xanh
+                    và nhiều loài chim đặc trưng.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800" alt="Biển">
+            <div class="card-content">
+                <h3>🌊 Hà Tiên</h3>
+                <p>
+                    Vùng đất nổi tiếng với cảnh biển,
+                    núi đá, hang động và nhiều địa danh
+                    mang giá trị lịch sử, văn hóa.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=800" alt="Búng Bình Thiên">
+            <div class="card-content">
+                <h3>🌿 Búng Bình Thiên</h3>
+                <p>
+                    Hồ nước ngọt tự nhiên có cảnh quan
+                    yên bình, gắn với đời sống của cộng đồng
+                    người Chăm tại địa phương.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800" alt="Thất Sơn">
+            <div class="card-content">
+                <h3>🏞️ Thất Sơn</h3>
+                <p>
+                    Thất Sơn nổi bật với hệ thống núi non
+                    độc đáo, cảnh quan hùng vĩ và nhiều
+                    câu chuyện văn hóa dân gian.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="culture" id="culture">
+    <h2 class="section-title">VĂN HÓA ĐA DẠNG</h2>
+    <p class="section-desc">
+        An Giang là nơi giao thoa văn hóa của nhiều
+        cộng đồng dân tộc với những phong tục và lễ hội đặc sắc.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800" alt="Văn hóa Khmer">
+            <div class="card-content">
+                <h3>Văn hóa người Khmer</h3>
+                <p>
+                    Nổi bật với những ngôi chùa có kiến trúc
+                    đặc sắc, nghệ thuật truyền thống và lễ hội
+                    mang đậm bản sắc dân tộc.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800" alt="Văn hóa Chăm">
+            <div class="card-content">
+                <h3>Văn hóa người Chăm</h3>
+                <p>
+                    Thể hiện qua kiến trúc thánh đường,
+                    trang phục truyền thống, nghề dệt
+                    thổ cẩm và đời sống cộng đồng.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800" alt="Lễ hội">
+            <div class="card-content">
+                <h3>Lễ hội truyền thống</h3>
+                <p>
+                    Lễ hội Vía Bà Chúa Xứ Núi Sam,
+                    Tết Chôl Chnăm Thmây và nhiều hoạt động
+                    văn hóa cộng đồng đặc sắc.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="food">
+    <h2 class="section-title">ẨM THỰC ĐẶC SẮC</h2>
+    <p class="section-desc">
+        Khám phá hương vị đặc trưng của vùng đất
+        An Giang qua những món ăn hấp dẫn.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800" alt="Bún cá">
+            <div class="card-content">
+                <h3>🍜 Bún cá Châu Đốc</h3>
+                <p>
+                    Món ăn nổi tiếng với nước dùng đậm đà,
+                    cá tươi và hương vị đặc trưng của
+                    miền Tây Nam Bộ.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=800" alt="Gỏi">
+            <div class="card-content">
+                <h3>🥗 Gỏi sầu đâu</h3>
+                <p>
+                    Món ăn dân dã có vị đắng đặc trưng
+                    của lá sầu đâu kết hợp cùng cá khô,
+                    thịt và nước mắm chua ngọt.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800" alt="Tung lò mò">
+            <div class="card-content">
+                <h3>🍲 Tung lò mò</h3>
+                <p>
+                    Món lạp xưởng bò truyền thống
+                    mang nét đặc trưng trong ẩm thực
+                    của cộng đồng người Chăm.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1563379091339-03246963d51a?w=800" alt="Cơm">
+            <div class="card-content">
+                <h3>🍛 Cơm tấm</h3>
+                <p>
+                    Món ăn quen thuộc của miền Nam,
+                    được nhiều người yêu thích
+                    bởi hương vị thơm ngon.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=800" alt="Mắm">
+            <div class="card-content">
+                <h3>🥘 Mắm Châu Đốc</h3>
+                <p>
+                    Đặc sản nổi tiếng với nhiều loại mắm,
+                    mang hương vị đặc trưng và gắn liền
+                    với văn hóa ẩm thực địa phương.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800" alt="Đặc sản">
+            <div class="card-content">
+                <h3>🍃 Thốt nốt</h3>
+                <p>
+                    Nước thốt nốt, đường thốt nốt
+                    và bánh bò thốt nốt là những đặc sản
+                    được nhiều du khách yêu thích.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="highlight">
+    <section>
+        <h2>AN GIANG – ĐIỂM ĐẾN ĐÁNG TRẢI NGHIỆM</h2>
+        <p>
+            Không chỉ sở hữu cảnh quan thiên nhiên tuyệt đẹp,
+            An Giang còn là nơi lưu giữ nhiều giá trị lịch sử,
+            văn hóa và truyền thống của vùng đất miền Tây.
+            Hãy đến để cảm nhận và khám phá!
+        </p>
+    </section>
+</div>
+
+<section class="itinerary" id="schedule">
+    <h2 class="section-title">GỢI Ý LỊCH TRÌNH DU LỊCH</h2>
+    <p class="section-desc">
+        Một hành trình tham khảo giúp du khách
+        khám phá những nét nổi bật của An Giang.
+    </p>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <h3>📍 Buổi sáng – Khám phá thiên nhiên</h3>
+            <p>
+                Tham quan Núi Cấm, ngắm cảnh thiên nhiên
+                và tận hưởng không khí trong lành.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>📍 Buổi trưa – Thưởng thức ẩm thực</h3>
+            <p>
+                Trải nghiệm các món đặc sản địa phương
+                như bún cá Châu Đốc và các món ăn dân dã.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>📍 Buổi chiều – Tìm hiểu văn hóa</h3>
+            <p>
+                Khám phá các địa điểm văn hóa, tâm linh
+                và tìm hiểu đời sống cộng đồng địa phương.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>📍 Buổi tối – Trải nghiệm địa phương</h3>
+            <p>
+                Thưởng thức ẩm thực, khám phá không gian
+                sinh hoạt và mua đặc sản làm quà.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <h2>🌿 KHÁM PHÁ AN GIANG</h2>
+    <p>Vẻ đẹp thiên nhiên – Bản sắc văn hóa – Con người thân thiện</p>
+    <br>
+    <p>Website giới thiệu và quảng bá du lịch An Giang.</p>
+    <p>© 2026 | Thiết kế phục vụ học tập</p>
+</footer>
+
+</body>
+</html>
